@@ -499,12 +499,16 @@ export default function Index() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-md transition-all transform hover:scale-105">
-              Get Started Today
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-navy-700 px-8 py-4 text-lg font-semibold rounded-md transition-all">
-              Learn More
-            </Button>
+            <Link to="/signup">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-md transition-all transform hover:scale-105">
+                Get Started Today
+              </Button>
+            </Link>
+            <Link to="/browse-jobs">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-navy-700 px-8 py-4 text-lg font-semibold rounded-md transition-all">
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
