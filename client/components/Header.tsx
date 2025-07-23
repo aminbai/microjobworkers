@@ -145,6 +145,93 @@ export function Header() {
             </Button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden bg-white border-t shadow-lg">
+            <div className="container mx-auto px-4 py-4">
+              <div className="space-y-3">
+                {/* Find Work Section */}
+                <div>
+                  <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Find Work</p>
+                  <div className="space-y-2 pl-4">
+                    <Link
+                      to="/browse-jobs"
+                      className="flex items-center text-navy-700 hover:text-orange-500 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Search className="w-4 h-4 mr-2" />
+                      Browse Jobs
+                    </Link>
+                    <Link
+                      to="/dashboard"
+                      className="flex items-center text-navy-700 hover:text-orange-500 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <User className="w-4 h-4 mr-2" />
+                      Freelancer Dashboard
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Hire Talent Section */}
+                <div>
+                  <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Hire Talent</p>
+                  <div className="space-y-2 pl-4">
+                    <Link
+                      to="/post-job"
+                      className="flex items-center text-navy-700 hover:text-orange-500 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <FileText className="w-4 h-4 mr-2" />
+                      Post a Job
+                    </Link>
+                    <Link
+                      to="/employer-dashboard"
+                      className="flex items-center text-navy-700 hover:text-orange-500 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Briefcase className="w-4 h-4 mr-2" />
+                      Employer Dashboard
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Other Links */}
+                <div className="space-y-2">
+                  <Link
+                    to="/about"
+                    className="block text-navy-700 hover:text-orange-500 transition-colors font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    About
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="block text-navy-700 hover:text-orange-500 transition-colors font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                </div>
+
+                {/* Mobile CTA Buttons */}
+                <div className="space-y-2 pt-4 border-t">
+                  <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button variant="outline" className="w-full">
+                      Login
+                    </Button>
+                  </Link>
+                  <Link to="/signup" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button className="w-full bg-orange-500 hover:bg-orange-600">
+                      Get Started
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
