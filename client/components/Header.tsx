@@ -115,23 +115,34 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="flex items-center space-x-4">
-            <Link to="/login">
+            <Link to="/login" className="hidden sm:inline-flex">
               <Button
                 variant="ghost"
-                className={`hidden sm:inline-flex ${
-                  isScrolled
-                    ? 'text-navy-600 hover:text-navy-700 hover:bg-navy-50'
-                    : 'text-white hover:text-white hover:bg-white/10'
-                }`}
+                className={isScrolled
+                  ? 'text-navy-600 hover:text-navy-700 hover:bg-navy-50'
+                  : 'text-white hover:text-white hover:bg-white/10'
+                }
               >
                 Login
               </Button>
             </Link>
-            <Link to="/signup">
+            <Link to="/signup" className="hidden sm:inline-flex">
               <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium transition-colors">
                 Get Started
               </Button>
             </Link>
+
+            {/* Mobile Menu Toggle */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className={`lg:hidden ${
+                isScrolled ? 'text-navy-600' : 'text-white'
+              }`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
           </div>
         </div>
       </div>
