@@ -14,7 +14,10 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import JobDetails from "./pages/JobDetails";
 import FreelancerDashboard from "./pages/FreelancerDashboard";
+import EmployerDashboard from "./pages/EmployerDashboard";
+import FreelancerProfile from "./pages/FreelancerProfile";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
