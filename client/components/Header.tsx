@@ -44,39 +44,73 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="#features"
+          <nav className="hidden lg:flex items-center space-x-6">
+            {/* Find Work Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center font-medium transition-colors hover:text-orange-500 ${
+                isScrolled ? 'text-navy-600' : 'text-white/90'
+              }`}>
+                Find Work
+                <ChevronDown className="w-4 h-4 ml-1" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link to="/browse-jobs" className="flex items-center">
+                    <Search className="w-4 h-4 mr-2" />
+                    Browse Jobs
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/dashboard" className="flex items-center">
+                    <User className="w-4 h-4 mr-2" />
+                    Freelancer Dashboard
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Hire Talent Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center font-medium transition-colors hover:text-orange-500 ${
+                isScrolled ? 'text-navy-600' : 'text-white/90'
+              }`}>
+                Hire Talent
+                <ChevronDown className="w-4 h-4 ml-1" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link to="/post-job" className="flex items-center">
+                    <FileText className="w-4 h-4 mr-2" />
+                    Post a Job
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/employer-dashboard" className="flex items-center">
+                    <Briefcase className="w-4 h-4 mr-2" />
+                    Employer Dashboard
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Direct Links */}
+            <Link
+              to="/about"
               className={`font-medium transition-colors hover:text-orange-500 ${
                 isScrolled ? 'text-navy-600' : 'text-white/90'
               }`}
             >
-              Features
-            </a>
-            <a
-              href="#pricing"
-              className={`font-medium transition-colors hover:text-orange-500 ${
-                isScrolled ? 'text-navy-600' : 'text-white/90'
-              }`}
-            >
-              Pricing
-            </a>
-            <a
-              href="#testimonials"
-              className={`font-medium transition-colors hover:text-orange-500 ${
-                isScrolled ? 'text-navy-600' : 'text-white/90'
-              }`}
-            >
-              Testimonials
-            </a>
-            <a
-              href="#contact"
+              About
+            </Link>
+
+            <Link
+              to="/contact"
               className={`font-medium transition-colors hover:text-orange-500 ${
                 isScrolled ? 'text-navy-600' : 'text-white/90'
               }`}
             >
               Contact
-            </a>
+            </Link>
           </nav>
 
           {/* CTA Buttons */}
