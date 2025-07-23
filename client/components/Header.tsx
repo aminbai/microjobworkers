@@ -1,14 +1,22 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuSeparator
-} from '@/components/ui/dropdown-menu';
-import { ChevronDown, User, Briefcase, Search, FileText, Menu, X } from 'lucide-react';
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
+import {
+  ChevronDown,
+  User,
+  Briefcase,
+  Search,
+  FileText,
+  Menu,
+  X,
+} from "lucide-react";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,16 +27,16 @@ export function Header() {
       setIsScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white shadow-lg backdrop-blur-lg bg-white/95'
-          : 'bg-transparent'
+          ? "bg-white shadow-lg backdrop-blur-lg bg-white/95"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -38,7 +46,9 @@ export function Header() {
             <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">F</span>
             </div>
-            <span className={`font-bold text-xl ${isScrolled ? 'text-navy-700' : 'text-white'}`}>
+            <span
+              className={`font-bold text-xl ${isScrolled ? "text-navy-700" : "text-white"}`}
+            >
               FreelanceHub
             </span>
           </Link>
@@ -47,9 +57,11 @@ export function Header() {
           <nav className="hidden lg:flex items-center space-x-6">
             {/* Find Work Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className={`flex items-center font-medium transition-colors hover:text-orange-500 ${
-                isScrolled ? 'text-navy-600' : 'text-white/90'
-              }`}>
+              <DropdownMenuTrigger
+                className={`flex items-center font-medium transition-colors hover:text-orange-500 ${
+                  isScrolled ? "text-navy-600" : "text-white/90"
+                }`}
+              >
                 Find Work
                 <ChevronDown className="w-4 h-4 ml-1" />
               </DropdownMenuTrigger>
@@ -71,9 +83,11 @@ export function Header() {
 
             {/* Hire Talent Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className={`flex items-center font-medium transition-colors hover:text-orange-500 ${
-                isScrolled ? 'text-navy-600' : 'text-white/90'
-              }`}>
+              <DropdownMenuTrigger
+                className={`flex items-center font-medium transition-colors hover:text-orange-500 ${
+                  isScrolled ? "text-navy-600" : "text-white/90"
+                }`}
+              >
                 Hire Talent
                 <ChevronDown className="w-4 h-4 ml-1" />
               </DropdownMenuTrigger>
@@ -97,7 +111,7 @@ export function Header() {
             <Link
               to="/about"
               className={`font-medium transition-colors hover:text-orange-500 ${
-                isScrolled ? 'text-navy-600' : 'text-white/90'
+                isScrolled ? "text-navy-600" : "text-white/90"
               }`}
             >
               About
@@ -106,7 +120,7 @@ export function Header() {
             <Link
               to="/contact"
               className={`font-medium transition-colors hover:text-orange-500 ${
-                isScrolled ? 'text-navy-600' : 'text-white/90'
+                isScrolled ? "text-navy-600" : "text-white/90"
               }`}
             >
               Contact
@@ -118,9 +132,10 @@ export function Header() {
             <Link to="/login" className="hidden sm:inline-flex">
               <Button
                 variant="ghost"
-                className={isScrolled
-                  ? 'text-navy-600 hover:text-navy-700 hover:bg-navy-50'
-                  : 'text-white hover:text-white hover:bg-white/10'
+                className={
+                  isScrolled
+                    ? "text-navy-600 hover:text-navy-700 hover:bg-navy-50"
+                    : "text-white hover:text-white hover:bg-white/10"
                 }
               >
                 Login
@@ -137,11 +152,15 @@ export function Header() {
               variant="ghost"
               size="sm"
               className={`lg:hidden ${
-                isScrolled ? 'text-navy-600' : 'text-white'
+                isScrolled ? "text-navy-600" : "text-white"
               }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -153,7 +172,9 @@ export function Header() {
               <div className="space-y-3">
                 {/* Find Work Section */}
                 <div>
-                  <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Find Work</p>
+                  <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                    Find Work
+                  </p>
                   <div className="space-y-2 pl-4">
                     <Link
                       to="/browse-jobs"
@@ -176,7 +197,9 @@ export function Header() {
 
                 {/* Hire Talent Section */}
                 <div>
-                  <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Hire Talent</p>
+                  <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                    Hire Talent
+                  </p>
                   <div className="space-y-2 pl-4">
                     <Link
                       to="/post-job"
