@@ -12,6 +12,7 @@ import { ChevronDown, User, Briefcase, Search, FileText, Menu, X } from 'lucide-
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
