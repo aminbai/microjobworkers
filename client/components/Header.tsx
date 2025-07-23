@@ -36,38 +36,38 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              to="#features"
+            <a
+              href="#features"
               className={`font-medium transition-colors hover:text-orange-500 ${
                 isScrolled ? 'text-navy-600' : 'text-white/90'
               }`}
             >
               Features
-            </Link>
-            <Link
-              to="#pricing"
+            </a>
+            <a
+              href="#pricing"
               className={`font-medium transition-colors hover:text-orange-500 ${
                 isScrolled ? 'text-navy-600' : 'text-white/90'
               }`}
             >
               Pricing
-            </Link>
-            <Link
-              to="#testimonials"
+            </a>
+            <a
+              href="#testimonials"
               className={`font-medium transition-colors hover:text-orange-500 ${
                 isScrolled ? 'text-navy-600' : 'text-white/90'
               }`}
             >
               Testimonials
-            </Link>
-            <Link
-              to="#contact"
+            </a>
+            <a
+              href="#contact"
               className={`font-medium transition-colors hover:text-orange-500 ${
                 isScrolled ? 'text-navy-600' : 'text-white/90'
               }`}
             >
               Contact
-            </Link>
+            </a>
           </nav>
 
           {/* CTA Buttons */}
